@@ -20,14 +20,14 @@ public class App
     				.setBlockUntilReadyTimeout(10000)
     				.build();
     		
-    		SplitFactory splitFactory = SplitFactoryBuilder.build("YOUR_API_KEY", config);
+    		SplitFactory splitFactory = SplitFactoryBuilder.build("1ho5d5ncnr4p272d5j7o32h5vnpa2m382ggo", config);
     		SplitClient client = splitFactory.client();
     		
     		client.blockUntilReady();
     		
         	
         	// Get the Split treatment
-        	String treatment = client.getTreatment("key", "SPLIT_NAME");
+        	String treatment = client.getTreatment("key", "java-split-demo");
         	
         	switch(treatment) {
 	        	case "off":
@@ -35,8 +35,7 @@ public class App
 	        	case "on":
 	        	default:
 	        		break;
-        	}
-        	
+        	}	
         	
     	}catch (Exception ex) {
     		System.out.println("Error " + ex.getClass());
